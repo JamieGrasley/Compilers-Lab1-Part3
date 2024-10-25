@@ -1,0 +1,45 @@
+print "Jamie Grasley #1164621";
+print newline;
+print "Beginning test cases for Part 3";
+print "=================================";
+print "Assign values to var,var1,var2,ran,r0n,r9m0";
+var=20*(30-67) / 4;
+var1=34 * 35 - 123;
+var2=1;
+ran=100;
+r0n=12;
+r9m0=r0n;
+print var;
+print var1;
+print var2;
+print ran;
+print r0n;
+print r9m0;
+print "Now we will try a few if statements with these variables";
+print "if (var<var1)";
+if (var<var1) then print "TRUE"; else print "Math is broken"; endif
+print "if (var2>=ran)";
+if (var2>=ran) then print "Math is broken"; else print "FALSE (correct)"; endif
+print "if (r0n==r9m0)";
+if (r0n==r9m0) then print "TRUE"; else print "Math is broken"; endif
+print "Now we can reassign a few of them";
+var2=22;
+ran=12;
+print var2;
+print ran;
+print "And add them together!";
+print var2+ran;
+print "Beginning previous test case from Part 2 to show it still works";
+print "==================================================================";
+print 20*(30-67) / 4;
+print "Testing lexical analyzer";
+print newline;
+print 34 * 35 - 123;
+if (2<4) then print "Two is less then four"; else print "Math is broken"; endif 
+if (5<4) then print "Math is broken"; else print "Math is working, five is not less then four"; endif
+if (4<=4) then print "LEQ works"; else print "Math is broken"; endif
+if (5>=4) then print "GEQ works"; else print "Math is broken"; endif
+if (4>3) then print "Greater than works"; else print "Math is broken"; endif
+print newline;
+print "A new line printed";
+stop; 
