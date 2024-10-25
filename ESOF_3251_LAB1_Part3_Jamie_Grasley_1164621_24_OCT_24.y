@@ -46,16 +46,16 @@ else{
         return -1;
 }   
 }
-
+//Define a structure with the key and value
 typedef struct idTable idTable;
 struct idTable {
         char key[1024];
         int val;
 };
-
+//Array of identifiers
 idTable valTable[50];
 int tabCount=0;
-
+//Check the table for the identifier, return the index if it is found
 int checkTable(char *id){
         if(tabCount==0){return -1;}
         for(int i=0;i<tabCount;i++){
@@ -65,6 +65,7 @@ int checkTable(char *id){
         }
         return -1;
 }
+//Adds the identifier to the table
 void tableAdd(char *id, int value){
         if (tabCount<50){
         strncpy(valTable[tabCount].key,id,sizeof(valTable[tabCount].key)-1);
@@ -73,9 +74,11 @@ void tableAdd(char *id, int value){
         }
         else{printf("Assignment table full");}
 }
+//Reassigns the value
 void tableAssign(int value, int index){
         valTable[index].val=value;
 }
+//Returns the value of the identifier
 int getValue(char *id){
         for(int i=0;i<tabCount;i++){
                 if(strcmp(id,valTable[i].key)==0){
@@ -140,12 +143,12 @@ newline:
         ;
 assign_stmt:
         IDENT ASSIGN expr SEMICOLON{
-                int index=checkTable($1);
+                int index=checkTable($1);//Check for the index
                 if(index>-1){
-                        tableAssign($3,index);
+                        tableAssign($3,index);//Reassign the identifier if it exists
                 }
                 else if (index==-1){
-                        tableAdd($1,$3);
+                        tableAdd($1,$3);//Add the identifier if it doesnt exist
 
                 }
         }

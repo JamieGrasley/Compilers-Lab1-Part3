@@ -42,7 +42,7 @@ char str[1024];
 [a-zA-Z][a-zA-Z0-9]* {
      strncpy(str, &(yytext[1]), strlen(yytext));
      yylval.strval = strdup(str);
-     return IDENT;}
+     return IDENT;}/*Identifier handling*/
 \n
 . {}/*Unrecognized input*/                   
 %%
